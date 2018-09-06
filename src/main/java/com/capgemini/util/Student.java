@@ -14,6 +14,15 @@ public class Student {
         return this.DNI;
     }
 
+    public void setStatus(Status val){
+        switch (val){
+            case ACTIVED: {} break;
+            case VISITED: {} break;
+            case BLOCKED: {} break;
+            default: {}
+        }
+    }
+
     @Override
     public boolean equals(Object o){
         if( !(o instanceof Student) )
@@ -29,15 +38,20 @@ public class Student {
 
     public static void main(String... args){
 
+
         Student e1 = new Student();
         e1.setDNI("1234");
 
         Student e2 = new Student();
         e2.setDNI("1234");
 
+        /*
         System.out.println( e1 == e2 );
         System.out.println( e1.equals(e2) );
         System.out.println( Objects.equals(e1, e2) );
+        */
+
+        e1.setStatus(Status.BLOCKED);
 
     }
 
