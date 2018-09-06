@@ -7,7 +7,7 @@ import java.util.List;
 
 public class TestListCollection {
 
-    private static List<String> l;
+    private List<String> l;
 
     @Before
     public void setUp(){
