@@ -14,11 +14,11 @@ public class StreamTest {
         list.add(new Simpson("Lisa", "Simpson", 8));
 
         List<Simpson> less18 = new LinkedList<>();
-        list.stream().filter( s -> s.getAge()<18 ).sorted().forEach(s -> less18.add(s) );
+        list.stream().filter( s -> s.getAge()<18 ).sorted().forEach(less18::add);
         System.out.println(less18);
 
         List<Simpson> greater18 = new LinkedList<>();
-        list.stream().filter( s -> s.getAge()>=18 ).forEach( s -> greater18.add(s) );
+        list.stream().filter( s -> s.getAge()>=18 ).forEach(greater18::add);
         System.out.println(greater18);
 
         list.forEach(System.out::println);
