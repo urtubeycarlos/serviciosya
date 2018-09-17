@@ -1,6 +1,6 @@
 package com.capgemini.serviciosya.dao.orm;
 
-import com.capgemini.serviciosya.beans.Province;
+import com.capgemini.serviciosya.entity.Province;
 import com.capgemini.serviciosya.dao.Dao;
 
 public class ProvinceDao extends Dao<Province> {
@@ -9,5 +9,8 @@ public class ProvinceDao extends Dao<Province> {
 		super(Province.class);
 	}
 
+	public Province findByName(String name){
+		return findBy("name", name);
+	}
 
 }

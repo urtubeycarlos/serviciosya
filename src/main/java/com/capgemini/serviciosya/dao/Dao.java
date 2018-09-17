@@ -152,12 +152,42 @@ public abstract class Dao<T> {
 
     protected T findBy(String fieldName, String fieldValue){
 
+        checkNullPointer(fieldName, "fieldName", "find by " + fieldName);
+        checkNullPointer(fieldValue, "fieldValue", "find by " + fieldName);
+        checkEmptyArgs(fieldName, fieldValue);
+
+        Session session = null;
+        T ret = null;
+
+        try {
+
+            session = _sessionFactory.openSession();
+
+            Criteria criteria = session.createCriteria(_resultClass);
+            criteria.add(Restrictions.eq(fieldName, fieldValue));
+
+            ret = _resultClass.cast( criteria.uniqueResult() );
+
+        } catch (Exception e) {
+
+            throw new DaoException (e.getMessage(), e);
+
+        } finally {
+
+            session.close ();
+        }
+
+        return ret;
+    }
+
+    protected List<T> findAllBy(String fieldName, String fieldValue){
+
 		checkNullPointer(fieldName, "fieldName", "find by " + fieldName);
     	checkNullPointer(fieldValue, "fieldValue", "find by " + fieldName);
     	checkEmptyArgs(fieldName, fieldValue);
 
         Session session = null;
-        T ret = null;
+        List<T> list = null;
 
         try {
 
@@ -166,7 +196,7 @@ public abstract class Dao<T> {
             Criteria criteria = session.createCriteria(_resultClass);
             criteria.add(Restrictions.eq(fieldName, fieldValue));
 
-            ret = _resultClass.cast( criteria.uniqueResult() );
+            list = (List<T>) criteria.list();
 
       } catch (Exception e) {
 
@@ -177,7 +207,7 @@ public abstract class Dao<T> {
         session.close ();
       }
 
-      return ret;
+      return list;
 
     }
 

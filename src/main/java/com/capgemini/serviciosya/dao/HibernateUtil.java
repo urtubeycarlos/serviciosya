@@ -15,10 +15,9 @@ public final class HibernateUtil {
     private static SessionFactory sessionAnnotationFactory;
     private static final Logger logger = Logger.getLogger (HibernateUtil.class);
 
-    private HibernateUtil () {
+    private HibernateUtil (){
         super();
     }
-
 
     private static SessionFactory buildSessionAnnotationFactory () {
 
