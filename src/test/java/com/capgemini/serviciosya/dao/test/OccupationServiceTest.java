@@ -7,9 +7,9 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.capgemeini.serviciosya.beans.domain.Occupation;
-import com.capgemeini.serviciosya.dao.IOccupationDao;
-import com.capgemeini.serviciosya.dao.OccupationDaoJDBC;
+import com.capgemini.serviciosya.beans.domain.Occupation;
+import com.capgemini.serviciosya.dao.IOccupationDao;
+import com.capgemini.serviciosya.dao.OccupationDaoJDBC;
 
 import java.util.List;
 

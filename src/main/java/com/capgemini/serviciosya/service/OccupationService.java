@@ -1,30 +1,28 @@
 
-package com.capgemeini.serviciosya.service;
+package com.capgemini.serviciosya.service;
 
 
 import java.util.List;
 
-import com.capgemeini.serviciosya.beans.domain.Occupation;
-import com.capgemeini.serviciosya.dao.IOccupationDao;
+import com.capgemini.serviciosya.beans.domain.Occupation;
+import com.capgemini.serviciosya.dao.IOccupationDao;
 import sun.plugin.util.PluginConsoleController;
 
 
 public class OccupationService {
 
+    private OccupationDao _occupationDao;
 
-    private IOccupationDao occupationDao;
-
-
-    public OccupationService () {
+    private OccupationService () {
 
         super ();
     }
 
-    public OccupationService (IOccupationDao occupationDao) {
+    public OccupationService(OccupationDao occupationDao) {
 
         super ();
+        _occupationDao = occupationDao;
 
-        this.occupationDao = occupationDao;
     }
 
 
