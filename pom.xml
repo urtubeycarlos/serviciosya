@@ -1,139 +1,21 @@
-<!--
-   - Name: pom.xml
-   - Description: Maven setup file.
-   - Author: Raul Peña (raul.pena@gmail.com)
-   -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <!--
-       - POM setup.
-       -->
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.capgemini</groupId>
-    <artifactId>serviciosya</artifactId>
-    <version>1.0.0</version>
-    <name>serviciosya</name>
-    <packaging>jar</packaging>
-    <description>Servicios Ya Application.</description>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.capgemini</groupId>
+	<artifactId>serviciosya</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
 
-    <developers>
-        <developer>
-            <id>urtubeycarlos</id>
-            <name>Carlos Urtubey</name>
-            <email>urtubeycarlos.0510@gmail.com</email>
-        </developer>
-    </developers>
 
-    <properties>
-        <jdk.version>1.8</jdk.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-framework.version>4.0.3.RELEASE</spring-framework.version>
-        <hibernate.version>3.6.9.Final</hibernate.version>
-        <logback.version>1.0.13</logback.version>
-        <slf4j.version>1.7.5</slf4j.version>
-    </properties>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
 
-    <dependencies>
-        <!-- Spring and Transactions -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${spring-framework.version}</version>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
-            <version>${spring-framework.version}</version>
-        </dependency>
-
-        <!-- Spring ORM support -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>${spring-framework.version}</version>
-        </dependency>
-
-        <!-- Logging with SLF4J & LogBack -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <!-- Hibernate -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>${hibernate.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>${hibernate.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>compile</scope>
-            <version>9.1-901.jdbc4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>commons-dbcp</groupId>
-            <artifactId>commons-dbcp</artifactId>
-            <version>1.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-
-    </dependencies>
-
-    <!--
-       - Build setup.
-       -->
-    <build>
-        <finalName>serviciosya</finalName>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+	<modules>
+		<module>api</module>
+		<module>rest-service</module>
+	</modules>
 
 </project>
